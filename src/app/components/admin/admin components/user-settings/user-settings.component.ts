@@ -12,7 +12,8 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   { id: 1, name: 'Hydrogen', contact: 1238765432, isActive: 'H', selected: false },
-  { id: 2, name: 'Helium', contact: 1234567898, isActive: 'He', selected: false }
+  { id: 2, name: 'Helium', contact: 1234567898, isActive: 'He', selected: false },
+  { id: 3 , name: 'oxygen' , contact: 1256789054 , isActive: 'ox' , selected: false}
 ];
 
 @Component({
@@ -29,6 +30,7 @@ export class UserSettingsComponent implements AfterViewInit {
   toggleActivation(element: PeriodicElement) {
     element.selected = !element.selected;
   }
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

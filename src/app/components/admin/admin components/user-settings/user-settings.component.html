@@ -8,7 +8,6 @@
                     <h3><span>Users</span></h3>
                 </div>
                 <!-- Request Button  -->
-                
             </div>
         </mat-card-content>
     </mat-card>
@@ -23,9 +22,7 @@
                     <mat-label>Search</mat-label>
                     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ayu" #input>
                 </mat-form-field>
-
             </div>
-
             <!-- Table area  -->
             <div class="table-container">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
