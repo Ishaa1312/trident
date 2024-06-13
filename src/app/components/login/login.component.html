@@ -1,0 +1,38 @@
+<div class="backdrop" fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxflex="25" class="card">
+        <mat-card-header>
+            <mat-card-subtitle class="subtitle">Welcome to</mat-card-subtitle>
+            <mat-card-title class="title">Trident</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content fxLayout="column" fxLayout.xs="column">
+                <mat-form-field fxFlexFill >
+                    <mat-label>Username</mat-label>
+                    <input matInput
+                           [formControl]="email"
+                           (blur)="updateErrorMessage()"
+                           required>
+                    @if (email.invalid) {
+                      <mat-error>{{errorMessage}}</mat-error>
+                    }
+                  </mat-form-field>
+
+                  <mat-form-field fxFlexFill>
+                    <mat-label>Password</mat-label>
+                    <input matInput 
+                           [formControl]="email"
+                           (blur)="updateErrorMessage()" 
+                           [type]="hide ? 'password' : 'text'"
+                           required>
+                    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    @if (password.invalid) {
+                        <mat-error>{{errorMessage}}</mat-error>
+                      }
+                  </mat-form-field>
+
+                <button mat-raised-button color="primary" (click)="login()">Login</button>
+        </mat-card-content>
+      </mat-card>
+</div>
